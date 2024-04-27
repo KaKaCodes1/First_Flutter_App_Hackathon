@@ -240,6 +240,16 @@ void _showHelpPopup(BuildContext context) {
               leading: Icon(Icons.logout),
               onTap: () => _handleLogout(context),
             ),
+            ListTile(
+              title: Text("Quote",style: TextStyle(fontFamily: 'OoohBaby', fontSize: 21, fontWeight: FontWeight.bold)),
+              subtitle: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0), // Add some vertical padding
+                child: Text(
+                  "\“Goals are the fuel in the furnace of achievement.\” \n– Brian Tracy",
+                  style: TextStyle(fontStyle: FontStyle.italic, fontFamily: 'OoohBaby', fontSize: 20, fontWeight: FontWeight.bold), // Optional: Italicize the quote
+                ),
+              ),
+            ),
           ],
         ),
       ),
