@@ -167,7 +167,7 @@ void _showHelpPopup(BuildContext context) {
       title: Text('Help',
       style: TextStyle(fontFamily: 'OoohBaby', fontSize: 55),),
       content: Text(
-        'This is a to-do list app that helps you manage your tasks. \n\n - Use the drawer menu to switch between task categories (All, Completed, Pending).\n - Tap on a task to mark it as completed or pending.\n - Swipe on a task to delete it (not implemented yet).\n - Tap the floating action button to add a new task.\n - Use the search bar (optional) to filter tasks by keyword.',
+        'This is a to-do list app that helps you manage your tasks. \n\n - Use the drawer menu to switch between task categories (All, Completed, Pending).\n - Tap on a task to mark it as completed.\n - Tap on the delete icon to delete it.\n - Tap the floating action button to add a new task.\n - Use the search bar to filter tasks by keyword (Still in progress).',
       style: TextStyle(fontFamily: 'OoohBaby', fontSize: 25),),
       actions: [
         TextButton(
@@ -251,25 +251,28 @@ void _showHelpPopup(BuildContext context) {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color.fromARGB(160, 157, 210, 222),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: TextField(
-                onChanged: (keyword) {
-                  // Implement search functionality if needed
-                },
+              onChanged: (keyword) {
+                // Filter the todosList based on the keyword
+                _foundToDo = todosList.where((todo) => todo.todoText.toLowerCase().contains(keyword.toLowerCase())).toList();
+                // Rebuild the list view to display filtered tasks
+                setState(() {});
+              },
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(0),
                   prefixIcon: Icon(
                     Icons.search,
-                    color: const Color(0xFF272626),
+                    color: Color.fromARGB(255, 0, 0, 0),
                     size: 20,
                   ),
                   prefixIconConstraints:
                       BoxConstraints(maxHeight: 20, minWidth: 25),
                   border: InputBorder.none,
                   hintText: "Search",
-                  hintStyle: TextStyle(color: const Color.fromARGB(255, 158, 158, 158)),
+                  hintStyle: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                 ),
               ),
             ),

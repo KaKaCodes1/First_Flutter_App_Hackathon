@@ -17,12 +17,12 @@ class ToDo {
   static List<ToDo> todoList() {
     // Return a list of ToDo items with predefined properties.
     return [
-      ToDo(id: '1', todoText: 'Buy groceries', isDone: true), // A completed task
-      ToDo(id: '2', todoText: 'Go shopping', isDone: true), // A completed task
-      ToDo(id: '3', todoText: 'Call lecturer', isDone: true), // A completed task
-      ToDo(id: '4', todoText: 'Call classmate'), // An incomplete task
-      ToDo(id: '5', todoText: 'Call brother'), // An incomplete task
-      ToDo(id: '6', todoText: 'Call sister'), // An incomplete task
+      ToDo(id: '1', todoText: 'Do this week\'s Dart Hackathon', isDone: true), // A completed task
+      ToDo(id: '2', todoText: 'Catch up on the Database content', isDone: true), // A completed task
+      ToDo(id: '3', todoText: 'Review my semister', isDone: true), // A completed task
+      ToDo(id: '4', todoText: 'Send an email to my Python instructor'), // An incomplete task
+      ToDo(id: '5', todoText: 'Listen to My Tech Story Podcast'), // An incomplete task
+      ToDo(id: '6', todoText: 'Watch the Despicable Me animation series'), // An incomplete task
     ];
   }
 }
